@@ -27,8 +27,12 @@
         </li>
       {% endfor %}
     </ul>
-  {% block content %}
-  {% endblock content %}
+
+    <div class="container" id="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
   <footer class="footer">
       <div class="container text-center">
         Medi Weightloss Python assessment. GitHub <a href="https://github.com/the-vampiire"><i class="fa fa-2x fa-github-square" style="color:antiquewhite"></i></a> Profile

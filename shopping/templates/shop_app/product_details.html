@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card" style="width: 25rem;">
+  <img class="card-img-top" src="{{ product.image_url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{ product.name }}</h5>
+    <p class="card-text text-left">{{ product.description }}</p>
+    {% if product.inventory > 0 %}
+    <div class="text-center"><a href="#" class="btn btn-primary">Purchase</a> {{ product.inventory }} In Stock</div>
+    {% else %}
+    <div class="text-center"><div class="btn btn-danger">Out of Stock</div></div>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}

@@ -8,5 +8,8 @@ class Product(models.Model):
   name = models.CharField(max_length = 50, blank = False)
   description = models.TextField(blank = False)
   cost = models.DecimalField(max_digits = 6, decimal_places = 2, blank = False)
-  inventory_on_hand = models.IntegerField(default = 1)
+  inventory = models.IntegerField(default = 1)
   category = models.ForeignKey(Category, on_delete = models.CASCADE, blank = False)
+
+  def __str__(self):
+    return '%s: %s' % (self.category.name, self.name)

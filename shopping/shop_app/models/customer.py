@@ -18,3 +18,6 @@ class Customer(models.Model):
   billing_address = models.ForeignKey(Address, related_name = 'billing_addresses', on_delete = models.CASCADE, blank = False)
   shipping_address = models.ForeignKey(Address, related_name = 'shipping_addresses', on_delete = models.CASCADE, blank = True)
 
+  def __str__(self):
+    return self.email
+

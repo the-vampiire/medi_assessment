@@ -8,4 +8,7 @@ class Address(models.Model):
   zipcode = models.CharField(max_length = 5, blank = False)
   city = models.CharField(max_length = 30, blank = False)
   state = models.CharField(max_length = 13, blank = False)
+
+  def __str__(self):
+    return '%s, %s - %s, %s' % (self.street, self.zipcode, self.city, self.state)
   

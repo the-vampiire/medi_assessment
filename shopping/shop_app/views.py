@@ -18,3 +18,14 @@ def category(request, category_id):
     "products": active_category.product_set.all(),
   }
   return render(request, 'shop_app/category_list.html', context)
+
+def product(request, product_id):
+  product = Product.objects.get(pk = product_id)
+  active_category = product.category
+  context = {
+    "title": "%s - %s" % (active_category.name, product.name),
+    "tab_categories": Category.objects.all(),
+    "active_category": active_category.pk,
+    "product": product
+  }
+  return render(request, 'shop_app/product_details.html', context)

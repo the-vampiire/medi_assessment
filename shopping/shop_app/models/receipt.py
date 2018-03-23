@@ -10,8 +10,8 @@ class Receipt(models.Model):
   customer = models.ForeignKey(Customer, on_delete = models.CASCADE, blank = False)
   product = models.ForeignKey(Product, on_delete = models.CASCADE, blank = False)
   quantity = models.PositiveIntegerField(blank = False)
-  total = models.DecimalField(max_digits = 8, decimal_places = 2, blank = True, editable = False)
-  confirmation_code = models.CharField(max_length = 100, blank = True, editable = False)
+  total = models.DecimalField(max_digits = 8, decimal_places = 2, blank = True)
+  confirmation_code = models.CharField(max_length = 100, blank = True)
 
   # https://docs.djangoproject.com/en/2.0/topics/db/transactions/#controlling-transactions-explicitly
   # https://docs.djangoproject.com/en/2.0/ref/models/querysets/#select-for-update
@@ -41,6 +41,11 @@ class Receipt(models.Model):
 
     self.total = self.product.cost * self.quantity
     self.confirmation_code = self._generate_confirmation()
+
+  def save(self, *args, **kwargs):
+    self.full_clean()
+    super(Receipt, self).save(*args, **kwargs)
+    return self
 
       
   def _generate_confirmation(self):

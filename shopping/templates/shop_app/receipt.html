@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="{{ product.image_url }}" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title text-center">{{ product.name }}</h3>
+    <div class="text-center">
+      <h5>Purchase Confirmation:</h5> <p>{{ receipt.confirmation_code }}</p>
+      <p>Quantity: {{ receipt.quantity }}</p>
+      <p>Total: ${{ receipt.total }}</p>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -6,7 +6,6 @@ class Customer(models.Model):
   class Meta:
     db_table = 'customers'
 
-
   _phone_validator = RegexValidator(
     regex = r'^\d{10}$',
     message = 'Enter a valid 10 digit phone number starting with the area code'

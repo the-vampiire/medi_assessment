@@ -9,6 +9,7 @@ class Product(models.Model):
   description = models.TextField(blank = False)
   cost = models.DecimalField(max_digits = 6, decimal_places = 2, blank = False)
   inventory = models.PositiveIntegerField(default = 1)
+  image_url = models.TextField(blank = False, null = True)
   category = models.ForeignKey(Category, on_delete = models.CASCADE, blank = False)
 
   def __str__(self):

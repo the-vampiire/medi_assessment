@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if product.inventory > 0 %}
+  <div class="container">
+    
+  </div>
+  <div class="row">
+    <div class="col">
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="{{ product.image_url }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{ product.name }}</h5>
+              <p class="card-text text-left">{{ product.description }}</p>
+              <h4 class="text-center">Available Inventory: {{ product.inventory }}</h4>
+            </div>
+          </div>
+    </div>
+    <div class="col">
+        <form id="purchase_form" action="{% url 'shop_app:purchase' product_id=product.pk %}" method="post" class="post-form">
+            {% csrf_token %}
+            <h3>Contact Information</h3>
+{% comment %} sorry for the hack here. see note in views.py {% endcomment %}
+            <div class="form-group">{{ customer_form }}</div>
+            <h3>Billing Address</h3>
+            <div class="form-group">{{ billing_form }}</div>
+            <h3>Shipping Address</h3> <span><input type="checkbox" id="same_as_billing_checkbox" name="same_address"> Same as billing</span>
+            <div class="form-group">{{ shipping_form }}</div>
+            <label>Quantity</label>
+            <span>{{ customer_form.non_field_errors }}</span>
+            <input type="number" name="quantity" value="1" min="1" max="{{ product.inventory }}">
+            <input type="submit" value="Purchase">
+          </form>
+    </div>
+  </div>
+  {% else %}
+  Sorry this item is no longer in stock.
+  {% endif %}
+  
+{% endblock content %}  

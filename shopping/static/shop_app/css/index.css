@@ -27,6 +27,7 @@
 
 #content {
   position: relative;
+  padding-bottom: 50px;
   /* padding: 20px 20px; */
   /* margin: 50px auto; */
   /* padding: 50px 0px; */
@@ -46,4 +47,8 @@
 .btn-primary:hover {
   border: 2px white ridge;
   background-color: turquoise;
+}
+
+#purchase_form {
+  margin: 50px auto;
 }

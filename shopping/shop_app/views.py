@@ -69,9 +69,10 @@ def purchase(request, product_id):
       try:
         receipt = Receipt(customer = customer, product = product, quantity = quantity).save()
         success_context = {
-          "title": "Purchase",
+          "title": "Purchase Confirmation",
           "tab_categories": Category.objects.all(),
           "active_category": active_category.pk,
+          "product": product,
           "receipt": receipt
         }
       # purchase completed successfully

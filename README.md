@@ -1,4 +1,13 @@
-# medi_assessment
+# Sample full stack Django application for a backend Python position at Medi Weightloss.
+
+## All image files, product names, and product descriptions are the property of Medi Weightloss Inc. and are used purely for demonstration purposes of the assessment.
+
+# View the project [Live Link](https://medi-shop-198920.appspot.com/)
+- Deployed on Google Cloud (Flexible App Engine container) using Gunicorn WSGI server.
+- Database is a Google Cloud Postgres instance.
+- Static files served securely from a Google Cloud bucket.
+
+# Steps for local testing (requires Conda for environment management)
 
 ## Clone the project
 - `$ git clone https://github.com/the-vampiire/medi_assessment`

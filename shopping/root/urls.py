@@ -22,6 +22,3 @@ urlpatterns = [
     path('', include('shop_app.urls', namespace = 'shop_app')),
     path('admin/', admin.site.urls),
 ]
-
-if settings.DEBUG: 
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

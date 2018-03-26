@@ -2,6 +2,7 @@ from django.db import models, IntegrityError, transaction
 from django.core.exceptions import ValidationError
 from .customer import Customer
 from .product import Product
+import time as t
 
 class Receipt(models.Model):
   class Meta:
@@ -54,11 +55,12 @@ class Receipt(models.Model):
 
     [category first letter] P [product_id] Q [quantity] C [customer_id] 
     """
-    return '%sP%dQ%dC%d' % (
+    return '%sP%dQ%dC%dT%d' % (
       self.product.category.name[:1].upper(),
       self.product.pk,
       self.quantity,
-      self.customer.pk
+      self.customer.pk,
+      int(t.time())
     ) 
 
   def __str__(self):

@@ -1,2 +1,5 @@
 *.pyc
 .vscode/
+.DS_Store
+bucket_static/
+app.yaml

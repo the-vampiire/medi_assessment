@@ -1,5 +1,9 @@
 {% extends "base.html" %}
-
+{% load static %}
+{% block header %}
+  <script src="{% static 'shop_app/js/purchase.js' %}"></script>
+  <link href="{% static 'shop_app/css/purchase.css' %}" type="text/css" rel="stylesheet">
+{% endblock header %}
 {% block content %}
   {% if product.inventory > 0 %}
   <div class="container">
@@ -11,8 +15,7 @@
             <img class="card-img-top" src="{{ product.image_url }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title text-center">{{ product.name }}</h5>
-              <p class="card-text text-left">{{ product.description }}</p>
-              <h4 class="text-center">Available Inventory: {{ product.inventory }}</h4>
+              <h5 class="text-center">{{ product.inventory }} In Stock</h5>
             </div>
           </div>
     </div>
@@ -26,10 +29,10 @@
             <div class="form-group">{{ billing_form }}</div>
             <h3>Shipping Address</h3> <span><input type="checkbox" id="same_as_billing_checkbox" name="same_address"> Same as billing</span>
             <div class="form-group">{{ shipping_form }}</div>
-            <label>Quantity</label>
+            <h3>Quantity</h3>
             <span>{{ customer_form.non_field_errors }}</span>
-            <input type="number" name="quantity" value="1" min="1" max="{{ product.inventory }}">
-            <input type="submit" value="Purchase">
+            <input type="number" id="quantity_input" name="quantity" value="1" min="1" max="{{ product.inventory }}">
+            <input class="btn btn-primary" type="submit" id="purchase_button" about="{{ product.cost }}" value="Purchase ${{ product.cost }}">
           </form>
     </div>
   </div>

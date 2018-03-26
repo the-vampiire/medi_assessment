@@ -7,9 +7,16 @@
     <h5 class="card-title text-center">{{ product.name }}</h5>
     <p class="card-text text-left">{{ product.description }}</p>
     {% if product.inventory > 0 %}
-    <div class="text-center"><a href="{% url 'shop_app:purchase' product_id=product.pk %}" class="btn btn-primary">${{ product.cost }}</a> {{ product.inventory }} In Stock</div>
+    <div class="text-center">
+        <h5>{{ product.inventory }} In Stock</h5>
+    </div>
+    <div class="text-center">
+      <a href="{% url 'shop_app:purchase' product_id=product.pk %}" class="btn btn-primary">
+        Purchase ${{ product.cost }}
+      </a>
+    </div>
     {% else %}
-    <div class="text-center"><div class="btn btn-danger">Out of Stock</div></div>
+    <div class="text-center"><button class="btn btn-danger" disabled>Out of Stock</button></div>
     {% endif %}
   </div>
 </div>

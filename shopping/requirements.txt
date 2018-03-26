@@ -1,0 +1,8 @@
+certifi==2018.1.18
+Django==2.0.2
+gunicorn==19.7.1
+pip==9.0.3
+psycopg2==2.7.4
+pytz==2018.3
+setuptools==38.5.1
+wheel==0.30.0

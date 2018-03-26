@@ -1,0 +1,52 @@
+#logo {
+  padding: 10px 10px;
+    height: 75px;
+    width: auto;
+}
+
+.nav-item > a {
+  border: 1px ridge black;
+  color: turquoise;
+}
+
+.active {
+  background-color: turquoise !important;
+}
+.nav-item > a:hover {
+  color: white;
+  background-color: turquoise;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 9%; /* Set the fixed height of the footer here */
+  /*line-height: 60px; !* Vertically center the text there *!*/
+  background-color: turquoise;
+  /*margin-top: 10px;*/
+  color: white;
+}
+
+#content {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.card {
+  position: relative;
+  margin: 50px auto;
+}
+
+.btn-primary {
+  background-color: turquoise;
+  border-color: white;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  border-color: black;
+  background-color: turquoise;
+}
+
+

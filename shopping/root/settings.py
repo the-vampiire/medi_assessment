@@ -88,7 +88,7 @@ USE_TZ = True
 STATIC_URL = os.environ['STATIC_URL']
 
 # collectstatic directory (located OUTSIDE the base directory so that it is not deployed directly)
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'bucket_static')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'), # static directory for local testing

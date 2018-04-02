@@ -6,6 +6,7 @@
 - Deployed on Google Cloud (Flexible App Engine container) using Gunicorn WSGI server.
 - Database is a Google Cloud Postgres instance.
 - Static files served securely from a Google Cloud bucket.
+- I also learned how to deploy the Django project to Google Cloud's Fleixble App Engine and wrote a [complete guide](https://medium.com/@vampiire/beginners-guide-to-deploying-a-django-postgresql-project-on-google-cloud-s-flexible-app-engine-e3357b601b91) on the process
 
 # Steps for local testing (requires Conda for environment management)
 
